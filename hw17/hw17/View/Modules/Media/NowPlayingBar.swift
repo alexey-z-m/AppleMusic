@@ -2,6 +2,7 @@ import SwiftUI
 
 struct NowPlayingBar: View {
     @State var play = false
+    
     var body: some View {
         ZStack() {
             Rectangle()
