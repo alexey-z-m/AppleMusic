@@ -9,26 +9,34 @@ struct TopRadioButton: View {
     
     var body: some View {
         Button(action: {}) {
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(type)
                     .foregroundColor(.secondary)
-                    .font(.system(size: 15))
+                    .font(.headline)
                 
                 Text(name)
-                    .frame(minWidth: 380, alignment: .leading)
-                    .font(.system(size: 20, weight: .bold, design: .default))
+                    .bold()
+                    .frame(minWidth: Metrics.topRadioWidth, alignment: .leading)
+                    .font(.title3)
                     .foregroundColor(colorScheme == .dark ? .white : .black)
                 
                 Text(discription)
-                    .frame(minWidth: 380, alignment: .leading)
-                    .font(.system(size: 20, weight: .regular, design: .default))
+                    .frame(minWidth: Metrics.topRadioWidth, alignment: .leading)
+                    .font(.subheadline)
                     .foregroundColor(.secondary)
                 
                 Image(nameImage)
                     .resizable()
-                    .frame(width: 380, height: 240)
+                    .frame(width: Metrics.topRadioWidth, height: Metrics.topRadioHeight, alignment: .center)
                     .cornerRadius(10)
             }
         }
+    }
+}
+
+extension TopRadioButton {
+    enum Metrics {
+        static let topRadioWidth = UIScreen.main.bounds.width - 50
+        static var topRadioHeight = topRadioWidth / 1.74
     }
 }

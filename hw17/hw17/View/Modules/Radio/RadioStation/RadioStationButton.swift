@@ -12,16 +12,18 @@ struct RadioStationButton: View {
                  Image(nameImage)
                      .resizable()
                      .scaledToFill()
-                     .frame(width: 110, height: 100, alignment: .center)
+                     .frame(width: 100, height: 100, alignment: .center)
                      .cornerRadius(10)
                      .padding(.leading)
                  
                  LazyVStack (alignment: .leading) {
                      Text(name)
-                         .bold()
+                         //.bold()
+                         .font(.headline)
                          .foregroundColor(colorScheme == .dark ? .white : .black)
                      
                      Text(discription)
+                         .font(.subheadline)
                          .foregroundColor(colorScheme == .dark ? .white : .black)
                  }
              }
